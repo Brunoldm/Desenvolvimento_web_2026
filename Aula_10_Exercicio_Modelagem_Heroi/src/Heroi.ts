@@ -1,24 +1,45 @@
-type CategoriaPersonagem = "Espadachim" | "Mago" | "Arqueiro";
+type Categoria = "Espadachim" | "Mago" | "Arqueiro";
 
-export class Heroi {
+class Heroi {
   nome: string;
-  categoria: CategoriaPersonagem;
+  categoria: Categoria;
   ataque: number;
-  consumoStamina: number;
-  stamina: number;
+  custo: number;
+  recurso: number; 
 
-  constructor(nome: string, categoria: CategoriaPersonagem, ataque: number, consumoStamina: number) {
+  constructor(nome: string, categoria: Categoria, ataque: number, custo: number) {
     this.nome = nome;
     this.categoria = categoria;
     this.ataque = ataque;
-    this.consumoStamina = consumoStamina;
+    this.custo = custo;
+
+    this.recurso = 0;
 
     if (categoria === "Espadachim") {
-      this.stamina = 10;
+      this.recurso = 50; 
     } else if (categoria === "Mago") {
-      this.stamina = 20;
+      this.recurso = 40; 
+    } else if (categoria === "Arqueiro") {
+      this.recurso = 10; 
+    }
+  }
+
+  atacar(): void {
+    if (this.recurso >= this.custo) {
+      this.recurso -= this.custo;
+      console.log(`Ataque de ${this.nome} bem sucedido, restando ${this.recurso} de recurso`);
     } else {
-      this.stamina = 30;
+      console.log(`Ataque de ${this.nome} falhou por falta de recurso`);
     }
   }
 }
+
+
+const espadachim: Heroi = new Heroi("Gilberto Barros", "Espadachim", 20, 10);
+espadachim.atacar();
+
+const mago: Heroi = new Heroi("Merlin", "Mago", 30, 15);
+mago.atacar();
+
+const arqueiro: Heroi = new Heroi("Robin Hood", "Arqueiro", 25, 2);
+arqueiro.atacar();
