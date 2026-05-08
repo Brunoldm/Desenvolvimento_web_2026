@@ -12,7 +12,6 @@ class Heroi {
     this.categoria = categoria;
     this.ataque = ataque;
     this.custo = custo;
-
     this.recurso = 0;
 
     if (categoria === "Espadachim") {
