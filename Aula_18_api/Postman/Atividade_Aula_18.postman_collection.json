@@ -99,7 +99,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{       \r\n        \"nome\": \"Fichario\", \r\n        \"preco\": 2.00, \r\n        \"fabricante\": { \r\n            \"nome\": \"Tilibra\", \r\n            \"endereco\": { \r\n                \"cidade\": \"Sao Paulo\", \r\n                \"pais\": \"Brasil\" } \r\n        }\r\n}",
+          "raw": "{       \r\n        \"nome\": \"Caderno\", \r\n        \"preco\": 20.00, \r\n        \"fabricante\": { \r\n            \"nome\": \"Tilibra\", \r\n            \"endereco\": { \r\n                \"cidade\": \"Sao Paulo\", \r\n                \"pais\": \"Brasil\" } \r\n        }\r\n}",
           "options": {
             "raw": {
               "language": "json"
